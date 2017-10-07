@@ -48,6 +48,16 @@ echo "Наклон -";
 };
 
 
+if (isset($_REQUEST['r']))
+{
+  $r = stripslashes($_REQUEST['r']);
+  if ($r == '')
+  { unset($r);}
+
+shell_exec("sh uartreset.sh");
+echo "Reset Uart";
+};
+
 
 
 ?>
