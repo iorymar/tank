@@ -1,0 +1,158 @@
+<title>Zero</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+
+<script type="text/javascript" src="/content/jquery.min.js"></script>
+
+
+<script type="text/javascript">
+function mode() {
+    $.ajax({
+        url: 'content/time.php',
+        success: function(data) {
+            $('#display').html(data);
+        }
+    });
+}
+
+var timeInterval = 2500;
+setInterval(mode, timeInterval);
+</script>
+<script type="text/javascript">
+function mode() {
+    $.ajax({
+        url: 'content/cpu.php',
+        success: function(data) {
+            $('#display1').html(data);
+        }
+    });
+}
+
+var timeInterval = 2500;
+setInterval(mode, timeInterval);
+</script>
+<script type="text/javascript">
+function mode() {
+    $.ajax({
+        url: 'content/ram.php',
+        success: function(data) {
+            $('#display2').html(data);
+        }
+    });
+}
+
+var timeInterval = 2500;
+setInterval(mode, timeInterval);
+</script>
+<script type="text/javascript">
+function mode() {
+    $.ajax({
+        url: 'content/temp.php',
+        success: function(data) {
+            $('#display3').html(data);
+        }
+    });
+}
+
+var timeInterval = 2500;
+setInterval(mode, timeInterval);
+</script>
+
+
+
+<script type="text/javascript">
+function mode() {
+    $.ajax({
+        url: 'content/statusvent.php',
+        success: function(data) {
+            $('#statusvent').html(data);
+        }
+    });
+}
+
+var timeInterval = 2500;
+setInterval(mode, timeInterval);
+</script>
+
+<script type="text/javascript">
+function mode() {
+    $.ajax({
+        url: 'content/voltage.php',
+        success: function(data) {
+            $('#voltage').html(data);
+        }
+    });
+}
+
+var timeInterval = 4000;
+setInterval(mode, timeInterval);
+</script>
+
+
+
+
+<table width="1024" height="25px" border="0" align="center" bgcolor="#FBF0DB"
+     cellpadding="2" cellspacing="0">
+    <tr> 
+     <td rowspan="2"  bgcolor="#FBF0DB"><a href="index.html"><img src="content/footer.png"></a>
+	<div id="display"></div>   </td>
+	<td width="100" align="center" style="border: 1px solid orange">Voltage:</td>
+      	<td width="100" align="center" style="border: 1px solid orange">CPU Load:</td>
+        <td width="100" align="center" style="border: 1px solid orange">MEMfree:</td>
+	<td width="100" align="center" style="border: 1px solid orange">CPU Temp:</td>
+	<td width="100" align="center"><img src="content/vent.png" width="40%"><div id="statusvent"></div></td>
+
+ 					</tr>
+   	<tr>
+	<td width="100" height="50px" bgcolor="#FBF0AB" align="center" style="border: 1px solid yellow"><div id="voltage"></td>
+      	<td width="100" height="50px" bgcolor="#FBF0AB" align="center" style="border: 1px solid yellow"><div id="display1"></td>
+        <td width="100" height="50px" bgcolor="#FBF0AB" align="center" style="border: 1px solid yellow"><div id="display2"></td>
+	<td width="100" height="50px" bgcolor="#FBF0AB" align="center" style="border: 1px solid yellow"><div id="display3"></div></td>
+	<td width="100" height="50px" align="center"> <input id="send" type="button" value="ON"/><input id="send1" type="button" value="OFF"/></td>    	
+	</tr>
+
+	<tr>
+     	<td colspan="5" height="700px" bgcolor="#FFFFFF" style="border: 1px solid black">
+<br>
+<br>
+<br>
+<br>
+<center><img src="content/pinout.png" width="40%"></center>
+<p>GPIO21 - /PA7-куллер</p>
+<p>PA8\9\10\20-моторы</p>
+<p>PD14-Лазер</p>
+<br>
+<br><p align="right"><a href="video.php" >Управление</a>&nbsp&nbsp</p>
+
+	</td>
+        </tr>
+
+ 	<tr>
+        <td colspan="5"><center><p id="status">log</p></center></td>
+        </tr>
+	
+
+   </table>
+<br>
+<br>
+
+<script type="text/javascript">   
+$(document).ready(function(){
+   $("#send").click(function(){
+      $("#status").load("/content/example.php","y=Yes");
+   })
+
+});             
+</script> 
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $("#send1").click(function(){
+      $("#status").load("/content/example.php","n=No");
+   })
+
+});
+</script>
+
+
