@@ -54,7 +54,7 @@ if (isset($_REQUEST['r']))
   if ($r == '')
   { unset($r);}
 
-shell_exec("sh uartreset.sh");
+shell_exec("sudo /var/www/html/content/uartrest.sh");
 echo "Reset Uart";
 };
 

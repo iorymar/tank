@@ -351,6 +351,7 @@ $_ = file_put_contents('/dev/ttyS1',$a. $_POST['t0'].'\n');
 
 </td>
 <td valign="top">
+<input  id="send10" type="button" value="Reset Uart"/>
 <p>Power:</p>
 <input  id="send2" type="button" value="Restart"/>
 <br>
@@ -364,8 +365,6 @@ $_ = file_put_contents('/dev/ttyS1',$a. $_POST['t0'].'\n');
 
 <p>Right Cam:</p>
 <input  id="send9" type="button" value="Up"/> <input  id="send8" type="button" value="Down"/>
-<p>Uart Reset:</p>
- <input  id="send10" type="button" value="Reset"/>
 
 
 </td>
