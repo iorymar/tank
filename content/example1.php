@@ -33,7 +33,7 @@ if (isset($_REQUEST['y']))
   if ($y == '')
   { unset($l);}
 
-shell_exec("echo + > /dev/ttyS1");
+shell_exec("echo { > /dev/ttyS1");
 echo "Наклон +";
 };
 
@@ -43,7 +43,7 @@ if (isset($_REQUEST['n']))
   if ($n == '')
   { unset($n);}
 
-shell_exec("echo - > /dev/ttyS1");
+shell_exec("echo } > /dev/ttyS1");
 echo "Наклон -";
 };
 

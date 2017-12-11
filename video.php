@@ -317,9 +317,11 @@ i = 1;
         <tr>
  <td colspan="5"  bgcolor="#FFFFFF"  height="650px" style="border: 1px solid black"><center>
 <?php
-$output = shell_exec('ifconfig wlan0 | grep inet | grep -v inet6 | grep -v 127.0.0.1 | cut  -c 21-33');
+
+$output = shell_exec("/sbin/ifconfig  | grep 'inet'| grep -v inet6 | grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'");
+//$output = shell_exec('ifconfig wlan0 | grep inet | grep -v inet6 | grep -v 127.0.0.1 | cut  -c 21-33');
 echo "<br>";
-echo "<img src='http://".str_replace(" ","",$output).":4444/webcam.flv' />";
+echo "<img src='http://".str_replace(" ","",$output).":8080/?action=stream' />";
 echo "<img src='http://".str_replace(" ","",$output).":4444/webcam1.flv' />";
 
 ?>
