@@ -60,4 +60,39 @@ echo "Reset Uart";
 
 
 
+if (isset($_REQUEST['x']))
+{
+  $x = stripslashes($_REQUEST['x']);
+  if ($x == '')
+  { unset($x);}
+
+shell_exec("echo x > /dev/ttyS1");
+echo "Speed 2 ";
+};
+
+
+if (isset($_REQUEST['c']))
+{
+  $c = stripslashes($_REQUEST['c']);
+  if ($c == '')
+  { unset($c);}
+
+shell_exec("echo c > /dev/ttyS1");
+echo "Speed 3 ";
+};
+
+
+
+if (isset($_REQUEST['z']))
+{
+  $z = stripslashes($_REQUEST['z']);
+  if ($z == '')
+  { unset($z);}
+
+shell_exec("echo z > /dev/ttyS1");
+echo "Speed 1 ";
+};
+
+
+
 ?>

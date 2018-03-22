@@ -368,6 +368,8 @@ $_ = file_put_contents('/dev/ttyS1',$a. $_POST['t0'].'\n');
 <p>Right Cam:</p>
 <input  id="send9" type="button" value="Up"/> <input  id="send8" type="button" value="Down"/>
 
+<p>Speed:</p>
+<input  id="send11" type="button" value="1"/><input  id="send12" type="button" value="2"/><input  id="send13" type="button" value="3"/>
 
 </td>
         </tr>
@@ -494,6 +496,36 @@ $(document).ready(function(){
 
    $("#send10").click(function(){
       $("#status").load("/content/example1.php","r=Ro");
+   })
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $("#send11").click(function(){
+      $("#status").load("/content/example1.php","z=Zo");
+   })
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $("#send12").click(function(){
+      $("#status").load("/content/example1.php","x=Xo");
+   })
+
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+   $("#send13").click(function(){
+      $("#status").load("/content/example1.php","c=Co");
    })
 
 });
