@@ -322,7 +322,7 @@ $output = shell_exec("/sbin/ifconfig  | grep 'inet'| grep -v inet6 | grep -v '12
 //$output = shell_exec('ifconfig wlan0 | grep inet | grep -v inet6 | grep -v 127.0.0.1 | cut  -c 21-33');
 echo "<br>";
 echo "<img src='http://".str_replace(" ","",$output).":8080/?action=stream' />";
-echo "<img src='http://".str_replace(" ","",$output).":4444/webcam1.flv' />";
+//echo "<img src='http://".str_replace(" ","",$output).":4444/webcam1.flv' />";
 
 ?>
 </center>
@@ -365,7 +365,7 @@ $_ = file_put_contents('/dev/ttyS1',$a. $_POST['t0'].'\n');
 <p>Light:</p>
 <input  id="send6" type="button" value="on"/> <input  id="send7" type="button" value="off"/>
 
-<p>Right Cam:</p>
+<p>Camera:</p>
 <input  id="send9" type="button" value="Up"/> <input  id="send8" type="button" value="Down"/>
 
 <p>Speed:</p>
